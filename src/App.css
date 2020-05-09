@@ -47,6 +47,7 @@
 .edit_delete{
   color: #1890ff;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .table_data_text{

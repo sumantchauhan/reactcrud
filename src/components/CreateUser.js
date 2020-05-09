@@ -110,6 +110,6 @@ import Spinner from 'react-bootstrap/Spinner';
 
 const mapStateToProps = state => ({
     users:state.posts.users
-})
+});
 
 export default connect(mapStateToProps,{createUsers})(CreateUser);

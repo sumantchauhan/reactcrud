@@ -1,4 +1,4 @@
-import { FETCH_POSTS, NEW_POST, FETCH_TODOS, NEW_TODO, FETCH_USERS, NEW_USER } from "./types";
+import { FETCH_POSTS, NEW_POST, FETCH_TODOS, NEW_TODO, FETCH_USERS, NEW_USER,EDIT_USER } from "./types";
 
 export const fetchPosts = () => dispatch => {
   fetch("https://jsonplaceholder.typicode.com/posts").then(res => {
@@ -81,6 +81,20 @@ export const fetchUsers  = () => dispatch => {
             payload: []
           })
     }
+}
+
+export const editUser = (id,newName) => dispatch => {
+    let users = JSON.parse(localStorage.getItem('users'));
+    let result = users.map(item => {
+        if(id === item.id){
+            item.name = newName
+        };
+        return item;
+    });
+    dispatch({
+        type: EDIT_USER,
+        payload: result
+      })
 }
 
 export const fetchTodos = () => dispatch => {

@@ -1,4 +1,4 @@
-import { FETCH_POSTS, NEW_POST, FETCH_TODOS, NEW_TODO, FETCH_USERS, NEW_USER } from "../actions/types";
+import { FETCH_POSTS, NEW_POST, FETCH_TODOS, NEW_TODO, FETCH_USERS, NEW_USER,EDIT_USER } from "../actions/types";
 
 const initialState = {
   items: [],
@@ -27,6 +27,11 @@ export default function(state = initialState, action) {
         users:action.payload
     };
     case NEW_USER:
+        return {
+            ...state,
+            users:action.payload
+        };
+    case EDIT_USER:
         return {
             ...state,
             users:action.payload
